@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { type NextPage } from "next";
 import Head from "next/head";
 
@@ -13,10 +14,39 @@ const Seat = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 10%;
-  margin: 1rem;
+  margin: 0.5rem;
 `;
 
+const students = [
+  "Amm",
+  "Atom",
+  "Baikhao",
+  "Bouquet",
+  "Fha",
+  "Moey",
+  "Mulan",
+  "Muna",
+  "Oahm",
+  "Pai",
+  "Pat",
+  "Peach",
+  "PK",
+  "Prewa",
+  "Pub",
+  "Rak",
+  "Yayo",
+];
+
 const Home: NextPage = () => {
+  const [random, setRandom] = useState(students);
+
+  function randomize() {
+    const shuffle = students.sort(() => 0.5 - Math.random());
+    setRandom(shuffle);
+
+    console.log(students, random);
+  }
+
   return (
     <>
       <Head>
@@ -28,24 +58,13 @@ const Home: NextPage = () => {
       <main className="container mx-auto flex min-h-screen flex-col items-center justify-center p-4">
         <h1 className="text-6xl font-bold">This week&apos;s seat</h1>
 
+        <button onClick={randomize}>Shuffle</button>
+
         {/* Seatings */}
-        <div className="seatbox grid h-screen w-full grid-cols-4 grid-rows-4">
-          <Seat>Pat</Seat>
-          <Seat>Joe</Seat>
-          <Seat>Jason</Seat>
-          <Seat>Joe</Seat>
-          <Seat>Jason</Seat>
-          <Seat>Joe</Seat>
-          <Seat>Jason</Seat>
-          <Seat>Joe</Seat>
-          <Seat>Jason</Seat>
-          <Seat>Joe</Seat>
-          <Seat>Jason</Seat>
-          <Seat>Joe</Seat>
-          <Seat>Jason</Seat>
-          <Seat>Jason</Seat>
-          <Seat>Joe</Seat>
-          <Seat>Joe</Seat>
+        <div className="seatbox">
+          {random.map((student) => (
+            <Seat key={student}>{student}</Seat>
+          ))}
         </div>
       </main>
     </>
