@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.seatbox {
+  height: 70vh;
+  width: 70vh;
+  @apply m-6;
+}
