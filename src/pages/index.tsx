@@ -12,8 +12,8 @@ const Seat = styled.div`
   font-size: 2rem;
   justify-content: center;
   align-items: center;
-
   border-radius: 10%;
+  margin: 1rem;
 `;
 
 const Home: NextPage = () => {
@@ -26,11 +26,26 @@ const Home: NextPage = () => {
       </Head>
 
       <main className="container mx-auto flex min-h-screen flex-col items-center justify-center p-4">
-        <h1 className="text-6xl font-bold">Today&apos;s Seat</h1>
+        <h1 className="text-6xl font-bold">This week&apos;s seat</h1>
 
         {/* Seatings */}
         <div className="seatbox grid h-screen w-full grid-cols-4 grid-rows-4">
           <Seat>Pat</Seat>
+          <Seat>Joe</Seat>
+          <Seat>Jason</Seat>
+          <Seat>Joe</Seat>
+          <Seat>Jason</Seat>
+          <Seat>Joe</Seat>
+          <Seat>Jason</Seat>
+          <Seat>Joe</Seat>
+          <Seat>Jason</Seat>
+          <Seat>Joe</Seat>
+          <Seat>Jason</Seat>
+          <Seat>Joe</Seat>
+          <Seat>Jason</Seat>
+          <Seat>Jason</Seat>
+          <Seat>Joe</Seat>
+          <Seat>Joe</Seat>
         </div>
       </main>
     </>
