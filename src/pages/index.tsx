@@ -52,13 +52,17 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>🍤</title>
+        <title>Class Website</title>
         <meta name="description" content="omg fr fr ong??" />
         <link rel="icon" href="/logo.svg" />
+        <meta
+          property="og:image"
+          content="https://patato.live/vaderfight.png"
+        />
       </Head>
 
       <main className="container mx-auto flex min-h-screen flex-col items-center justify-center p-4">
-        <h1 className="text-6xl font-bold">This week&apos;s seat</h1>
+        <h1 className="text-6xl font-bold">Random Seat Generator</h1>
 
         {/* Seatings */}
         <div className="seatbox">
@@ -67,10 +71,10 @@ const Home: NextPage = () => {
           ))}
         </div>
         <button
-          className="mt-4 rounded-lg bg-blue-500 px-4 py-2 text-2xl text-white"
+          className="mt-4 rounded-lg bg-green-500 px-4 py-3 text-2xl text-white"
           onClick={randomize}
         >
-          Shuffle
+          Shuffle 🔀
         </button>
       </main>
     </>
