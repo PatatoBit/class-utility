@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { type NextPage } from "next";
 import Head from "next/head";
 
 import styled from "styled-components";
+import { PassThrough } from "stream";
 
 const Seat = styled.div`
   display: flex;
@@ -41,10 +42,11 @@ const Home: NextPage = () => {
   const [random, setRandom] = useState(students);
 
   function randomize() {
-    const shuffle = students.sort(() => 0.5 - Math.random());
+    const shuffle = [...students].sort(() => Math.random() - 0.5);
+
     setRandom(shuffle);
 
-    console.log(students, random);
+    // console.log(students, random);
   }
 
   return (
@@ -62,8 +64,8 @@ const Home: NextPage = () => {
 
         {/* Seatings */}
         <div className="seatbox">
-          {random.map((student) => (
-            <Seat key={student}>{student}</Seat>
+          {random.map((rand) => (
+            <Seat key={rand}>{rand}</Seat>
           ))}
         </div>
       </main>
