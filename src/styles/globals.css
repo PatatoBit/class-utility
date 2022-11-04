@@ -4,6 +4,7 @@
 
 .seatbox {
   height: 70vh;
-  width: 70vh;
-  @apply m-6 grid grid-cols-4;
+  @apply m-2 grid w-5/6 grid-cols-4 text-xl
+  transition-all duration-200 sm:w-2/4
+  sm:text-2xl;
 }

@@ -1,21 +1,21 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { type NextPage } from "next";
 import Head from "next/head";
 
 import styled from "styled-components";
-import { PassThrough } from "stream";
 
 const Seat = styled.div`
   display: flex;
   width: full;
   height: full;
-  background-color: #c4b5fd;
+  background-color: #59afff;
   color: white;
-  font-size: 2rem;
   justify-content: center;
   align-items: center;
-  border-radius: 10%;
+  border-radius: 0.5rem;
   margin: 0.5rem;
+  filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03))
+    drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
 `;
 
 const students = [
@@ -60,14 +60,18 @@ const Home: NextPage = () => {
       <main className="container mx-auto flex min-h-screen flex-col items-center justify-center p-4">
         <h1 className="text-6xl font-bold">This week&apos;s seat</h1>
 
-        <button onClick={randomize}>Shuffle</button>
-
         {/* Seatings */}
         <div className="seatbox">
           {random.map((rand) => (
             <Seat key={rand}>{rand}</Seat>
           ))}
         </div>
+        <button
+          className="mt-4 rounded-lg bg-blue-500 px-4 py-2 text-2xl text-white"
+          onClick={randomize}
+        >
+          Shuffle
+        </button>
       </main>
     </>
   );
