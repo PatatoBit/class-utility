@@ -1,10 +1,24 @@
-import { Heading } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import Layout from "../components/layout/content";
+
+import { Container, Heading } from "@chakra-ui/react";
 import styles from "../styles/Home.module.css";
 
+import Layout from "../components/layout/content";
+import Paragraph from "../components/paragraph";
+
 export default function Home() {
+  const [date, setDate] = useState(new Date());
+
+  useEffect(() => {
+    const interval = setInterval(() => setDate(new Date()), 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
   return (
     <>
       <Head>
@@ -14,7 +28,10 @@ export default function Home() {
 
       <Layout>
         <main>
-          <Heading>Hello There👋</Heading>
+          <Container>
+            <Heading>{date.toLocaleTimeString()}</Heading>
+            <Paragraph>{date.toDateString()}</Paragraph>
+          </Container>
         </main>
       </Layout>
     </>
