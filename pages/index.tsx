@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 
-import { Container, Heading } from "@chakra-ui/react";
+import { Center, Container, Heading } from "@chakra-ui/react";
 import styles from "../styles/Home.module.css";
 
 import Layout from "../components/layout/content";
@@ -29,8 +29,10 @@ export default function Home() {
       <Layout>
         <main>
           <Container centerContent>
-            <Heading>{date.toLocaleTimeString()}</Heading>
-            <Paragraph>{date.toDateString()}</Paragraph>
+            <Center flexDirection="column" h="full">
+              <Heading size="3xl">{date.toLocaleTimeString()}</Heading>
+              <Paragraph>{date.toDateString()}</Paragraph>
+            </Center>
           </Container>
         </main>
       </Layout>

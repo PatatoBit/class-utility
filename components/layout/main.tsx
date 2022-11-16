@@ -1,5 +1,6 @@
 import Head from "next/head";
 import React from "react";
+import Nav from "../Nav";
 
 function Layout({ children }: React.PropsWithChildren) {
   return (
@@ -28,6 +29,8 @@ function Layout({ children }: React.PropsWithChildren) {
         <link rel="apple-touch-icon" href="apple-touch-icon.png" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
       </Head>
+
+      <Nav />
 
       {children}
     </>
