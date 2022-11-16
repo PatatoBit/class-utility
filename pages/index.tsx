@@ -28,7 +28,7 @@ export default function Home() {
 
       <Layout>
         <main>
-          <Container>
+          <Container centerContent>
             <Heading>{date.toLocaleTimeString()}</Heading>
             <Paragraph>{date.toDateString()}</Paragraph>
           </Container>

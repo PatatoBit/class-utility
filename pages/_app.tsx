@@ -1,4 +1,4 @@
-import "../styles/globals.css";
+import "../styles/globals.scss";
 import type { AppProps } from "next/app";
 import Chakra from "../components/chakra";
 import Fonts from "../components/fonts";
