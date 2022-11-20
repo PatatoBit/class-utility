@@ -6,8 +6,8 @@ type DateType = {
 };
 
 export default function useDate(): DateType {
-  const [time, setTime] = useState("Loading...");
-  const [day, setDay] = useState("Loading...");
+  const [time, setTime] = useState("Loading Time...");
+  const [day, setDay] = useState("Loading Day...");
 
   setInterval(() => {
     const current = new Date();
