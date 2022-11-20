@@ -1,13 +1,13 @@
 # To do list
 
 ## Home page
-- [] Clock &/ 3D Model 
+- [X] Clock &/ 3D Model 
 
 ## Seat Randomizer
-- [ ] Accurate seat grid layout
-- [ ] Random with height
+- [X] Accurate seat grid layout
+- [X] Random with height
 - [ ] Pairing option
-- [ ] Random leader by seat
+- [X] Random leader by seat
 
 ## Grouper
 - [ ] Separate selection by attendance
