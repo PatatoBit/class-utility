@@ -53,24 +53,28 @@ function Nav({ children }: React.PropsWithChildren) {
             flexGrow={1}
             mt={{ base: 4, md: 0 }}
           >
-            {/* <LinkItem path="/">Home</LinkItem> */}
-            {/* <LinkItem path="/seat">Seat</LinkItem> */}
+            <LinkItem path="/">Home</LinkItem>
+            <LinkItem path="/seat">Seat</LinkItem>
             {/* Mobile */}
-            <Box flex={1} alignItems="right">
-              <Menu isLazy id="navbar-menu">
-                <MenuButton
-                  as={IconButton}
-                  icon={<HamburgerIcon />}
-                  variant="outline"
-                  aria-label="Options"
-                />
-                <MenuList>
-                  <LinkItem path="/">Home</LinkItem>
-                  <LinkItem path="/seat">Seat</LinkItem>
-                </MenuList>
-              </Menu>
-            </Box>
           </Stack>
+          <Box
+            flex={1}
+            alignItems="right"
+            display={{ base: "inline-block", md: "none" }}
+          >
+            <Menu isLazy id="navbar-menu">
+              <MenuButton
+                as={IconButton}
+                icon={<HamburgerIcon />}
+                variant="outline"
+                aria-label="Options"
+              />
+              <MenuList>
+                <LinkItem path="/">Home</LinkItem>
+                <LinkItem path="/seat">Seat</LinkItem>
+              </MenuList>
+            </Menu>
+          </Box>
         </Container>
       </Box>
     </>
