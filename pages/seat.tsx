@@ -105,6 +105,9 @@ function Seat() {
               <Heading>Note</Heading>
             </Container>
             <li>
+              Yellow box is the <code>leader</code>
+            </li>
+            <li>
               Height optimized, check{" "}
               <Link href="/names.json">
                 <code>/names.json</code>
