@@ -6,6 +6,7 @@ import styles from "../styles/Seat.module.scss";
 
 import names from "../public/names.json";
 import { useState } from "react";
+import Link from "next/link";
 
 const SeatBox = styled.div<{ leader?: boolean }>`
   color: white;
@@ -99,6 +100,27 @@ function Seat() {
               Randomize
             </Button>
           </Container>
+          <ul>
+            <Container centerContent>
+              <Heading>Note</Heading>
+            </Container>
+            <li>
+              Height optimized, check{" "}
+              <Link href="/names.json">
+                <code>/names.json</code>
+              </Link>{" "}
+              for the data
+            </li>
+            <li>
+              First row marked as <code>S</code>
+            </li>
+            <li>
+              Second & Third row marked as <code>M</code>
+            </li>
+            <li>
+              Fourth row marked as <code>B</code>
+            </li>
+          </ul>
         </Container>
       </Layout>
     </>
