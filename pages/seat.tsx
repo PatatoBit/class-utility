@@ -27,11 +27,19 @@ function Seat() {
   const tierM = names.filter((name) => name.height == "M");
   const tierB = names.filter((name) => name.height == "B");
 
+  const [leader, setLeader] = useState("");
+
   const [first, setFirst] = useState(tierS);
   const [second, setSecond] = useState(tierM);
   const [third, setThird] = useState(tierB);
 
-  const randomize = () => {};
+  const randomize = () => {
+    setLeader(names[Math.floor(Math.random() * first.length)].name);
+
+    setFirst([...first].sort(() => Math.random() - 0.5));
+    setSecond([...second].sort(() => Math.random() - 0.5));
+    setThird([...third].sort(() => Math.random() - 0.5));
+  };
   return (
     <>
       <Layout title="Seat Generator">
@@ -41,16 +49,18 @@ function Seat() {
             <>
               <div></div>
               {/* First Row */}
-              {first.map((student) => {
+              {first.map((student, index) => {
+                const isLeader = leader == student.name;
+
                 return (
-                  <SeatBox key={student.name}>
+                  <SeatBox leader={isLeader} key={student.name}>
                     <div>{student.name}</div>
                   </SeatBox>
                 );
               })}
 
               {second.map((student, index) => {
-                const leader = index == 0;
+                const isLeader = leader == student.name;
                 const indent = index == 5;
 
                 return (
@@ -58,12 +68,12 @@ function Seat() {
                     {indent ? (
                       <>
                         <div></div>
-                        <SeatBox leader={leader} key={student.name}>
+                        <SeatBox leader={isLeader} key={student.name}>
                           <div>{student.name}</div>
                         </SeatBox>
                       </>
                     ) : (
-                      <SeatBox leader={leader} key={student.name}>
+                      <SeatBox leader={isLeader} key={student.name}>
                         <div>{student.name}</div>
                       </SeatBox>
                     )}
@@ -73,9 +83,11 @@ function Seat() {
 
               <div></div>
 
-              {third.map((student) => {
+              {third.map((student, index) => {
+                const isLeader = leader == student.name;
+
                 return (
-                  <SeatBox key={student.name}>
+                  <SeatBox leader={isLeader} key={student.name}>
                     <div>{student.name}</div>
                   </SeatBox>
                 );
