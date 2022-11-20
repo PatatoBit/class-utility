@@ -1,4 +1,15 @@
-import { Box, Container, Flex, Heading, Stack } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  Flex,
+  Heading,
+  IconButton,
+  Menu,
+  MenuButton,
+  MenuList,
+  Stack,
+} from "@chakra-ui/react";
+import { HamburgerIcon } from "@chakra-ui/icons";
 import Link from "next/link";
 import React from "react";
 
@@ -37,13 +48,28 @@ function Nav({ children }: React.PropsWithChildren) {
           <Stack
             direction={{ base: "column", md: "row" }}
             display={{ base: "none", md: "flex" }}
-            width={{ base: "full", md: "auto" }}
+            width={{ base: "full" }}
             alignItems="center"
             flexGrow={1}
             mt={{ base: 4, md: 0 }}
           >
-            <LinkItem path="/">Home</LinkItem>
-            <LinkItem path="/seat">Seat</LinkItem>
+            {/* <LinkItem path="/">Home</LinkItem> */}
+            {/* <LinkItem path="/seat">Seat</LinkItem> */}
+            {/* Mobile */}
+            <Box flex={1} alignItems="right">
+              <Menu isLazy id="navbar-menu">
+                <MenuButton
+                  as={IconButton}
+                  icon={<HamburgerIcon />}
+                  variant="outline"
+                  aria-label="Options"
+                />
+                <MenuList>
+                  <LinkItem path="/">Home</LinkItem>
+                  <LinkItem path="/seat">Seat</LinkItem>
+                </MenuList>
+              </Menu>
+            </Box>
           </Stack>
         </Container>
       </Box>
