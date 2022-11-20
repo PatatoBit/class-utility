@@ -1,19 +1,70 @@
 [
-  "Amm",
-  "Atom",
-  "Baikhao",
-  "Bouquet",
-  "Fha",
-  "Moey",
-  "Mulan",
-  "Muna",
-  "Oahm",
-  "Pai",
-  "Pat",
-  "Peach",
-  "PK",
-  "Prewa",
-  "Pub",
-  "Rak",
-  "Yayo"
+  {
+    "name": "Amm",
+    "height": "M"
+  },
+  {
+    "name": "Atom",
+    "height": "B"
+  },
+  {
+    "name": "Baikhao",
+    "height": "M"
+  },
+  {
+    "name": "Bouquet",
+    "height": "S"
+  },
+  {
+    "name": "Fha",
+    "height": "M"
+  },
+  {
+    "name": "Moey",
+    "height": "M"
+  },
+  {
+    "name": "Mulan",
+    "height": "S"
+  },
+  {
+    "name": "Muna",
+    "height": "S"
+  },
+  {
+    "name": "Oahm",
+    "height": "B"
+  },
+  {
+    "name": "Pai",
+    "height": "M"
+  },
+  {
+    "name": "Pat",
+    "height": "B"
+  },
+  {
+    "name": "Peach",
+    "height": "S"
+  },
+  {
+    "name": "PK",
+    "height": "B"
+  },
+  {
+    "name": "Prewa",
+    "height": "M"
+  },
+  {
+    "name": "Pub",
+    "height": "M"
+  },
+  {
+    "name": "Rak",
+    "height": "M"
+  },
+  {
+    "name": "Yayo",
+    "height": "M"
+  }
 ]

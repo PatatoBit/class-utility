@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
 import Head from "next/head";
-import Image from "next/image";
 
 import { Center, Container, Heading } from "@chakra-ui/react";
 import styles from "../styles/Home.module.css";
@@ -8,16 +6,10 @@ import styles from "../styles/Home.module.css";
 import Layout from "../components/layout/content";
 import Paragraph from "../components/paragraph";
 
+import useDate from "../lib/hooks/useDate";
+
 export default function Home() {
-  const [date, setDate] = useState(new Date());
-
-  useEffect(() => {
-    const interval = setInterval(() => setDate(new Date()), 1000);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
+  const { time, day } = useDate();
 
   return (
     <>
@@ -30,8 +22,8 @@ export default function Home() {
         <main>
           <Container centerContent>
             <Center flexDirection="column" h="full">
-              <Heading size="3xl">{date.toLocaleTimeString()}</Heading>
-              <Paragraph>{date.toDateString()}</Paragraph>
+              <Heading size="3xl">{time}</Heading>
+              <Paragraph>{day}</Paragraph>
             </Center>
           </Container>
         </main>
