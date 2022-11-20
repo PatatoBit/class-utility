@@ -35,7 +35,7 @@ function Seat() {
   const [third, setThird] = useState(tierB);
 
   const randomize = () => {
-    setLeader(names[Math.floor(Math.random() * first.length)].name);
+    setLeader(names[Math.floor(Math.random() * names.length)].name);
 
     setFirst([...first].sort(() => Math.random() - 0.5));
     setSecond([...second].sort(() => Math.random() - 0.5));
