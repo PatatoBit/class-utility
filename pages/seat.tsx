@@ -1,4 +1,4 @@
-import { Button, Container, Heading } from "@chakra-ui/react";
+import { Button, Container, Heading, Text } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 
 import Layout from "../components/layout/content";
@@ -13,7 +13,7 @@ const SeatBox = styled.div<{ leader?: boolean }>`
   background-color: ${(props) => (props.leader ? "#FFD533" : "#59afff")};
   border-radius: 0.4rem;
 
-  div {
+  p {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -55,7 +55,7 @@ function Seat() {
 
                 return (
                   <SeatBox leader={isLeader} key={student.name}>
-                    <div>{student.name}</div>
+                    <Text>{student.name}</Text>
                   </SeatBox>
                 );
               })}
@@ -70,12 +70,12 @@ function Seat() {
                       <>
                         <div></div>
                         <SeatBox leader={isLeader} key={student.name}>
-                          <div>{student.name}</div>
+                          <Text>{student.name}</Text>
                         </SeatBox>
                       </>
                     ) : (
                       <SeatBox leader={isLeader} key={student.name}>
-                        <div>{student.name}</div>
+                        <Text>{student.name}</Text>
                       </SeatBox>
                     )}
                   </>
@@ -89,7 +89,7 @@ function Seat() {
 
                 return (
                   <SeatBox leader={isLeader} key={student.name}>
-                    <div>{student.name}</div>
+                    <Text>{student.name}</Text>
                   </SeatBox>
                 );
               })}
@@ -101,7 +101,7 @@ function Seat() {
             </Button>
           </Container>
           <ul>
-            <Container centerContent>
+            <Container centerContent mt={10}>
               <Heading>Note</Heading>
             </Container>
             <li>
