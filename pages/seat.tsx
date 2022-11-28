@@ -10,7 +10,7 @@ import Link from "next/link";
 
 const SeatBox = styled.div<{ leader?: boolean }>`
   color: white;
-  background-color: ${(props) => (props.leader ? "#FFD533" : "#59afff")};
+  background-color: ${(props) => (props.leader ? "#ffb515" : "#59afff")};
   border-radius: 0.4rem;
 
   p {
