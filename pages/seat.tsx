@@ -24,22 +24,19 @@ const SeatBox = styled.div<{ leader?: boolean }>`
 `;
 
 function Seat() {
-  const tierS = names.filter((name) => name.height == "S");
-  const tierM = names.filter((name) => name.height == "M");
-  const tierB = names.filter((name) => name.height == "B");
+  const tierX = names.filter((name) => name.height == "X");
+  const tierY = names.filter((name) => name.height == "Y");
 
   const [leader, setLeader] = useState("");
 
-  const [first, setFirst] = useState(tierS);
-  const [second, setSecond] = useState(tierM);
-  const [third, setThird] = useState(tierB);
+  const [x, setX] = useState(tierX);
+  const [y, setY] = useState(tierY);
 
   const randomize = () => {
     setLeader(names[Math.floor(Math.random() * names.length)].name);
 
-    setFirst([...first].sort(() => Math.random() - 0.5));
-    setSecond([...second].sort(() => Math.random() - 0.5));
-    setThird([...third].sort(() => Math.random() - 0.5));
+    setX([...x].sort(() => Math.random() - 0.5));
+    setY([...y].sort(() => Math.random() - 0.5));
   };
   return (
     <>
@@ -49,20 +46,12 @@ function Seat() {
           <div className={styles.grid}>
             <>
               <div></div>
-              {/* First Row */}
-              {first.map((student, index) => {
+
+              {/* 1-3 Row */}
+              {x.map((student, index) => {
                 const isLeader = leader == student.name;
 
-                return (
-                  <SeatBox leader={isLeader} key={student.name}>
-                    <Text>{student.name}</Text>
-                  </SeatBox>
-                );
-              })}
-
-              {second.map((student, index) => {
-                const isLeader = leader == student.name;
-                const indent = index == 5;
+                const indent = index == 9;
 
                 return (
                   <>
@@ -82,9 +71,9 @@ function Seat() {
                 );
               })}
 
+              {/* Back row */}
               <div></div>
-
-              {third.map((student, index) => {
+              {y.map((student, index) => {
                 const isLeader = leader == student.name;
 
                 return (
