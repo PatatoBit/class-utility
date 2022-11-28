@@ -104,13 +104,10 @@ function Seat() {
               for the data
             </li>
             <li>
-              First row marked as <code>S</code>
+              1st-3rd rows are marked as <code>X</code>
             </li>
             <li>
-              Second & Third row marked as <code>M</code>
-            </li>
-            <li>
-              Fourth row marked as <code>B</code>
+              4th row is marked as <code>Y</code>
             </li>
           </ul>
         </Container>
